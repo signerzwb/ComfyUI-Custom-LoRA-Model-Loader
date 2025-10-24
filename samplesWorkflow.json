@@ -1,0 +1,1191 @@
+{
+  "id": "91f6bbe2-ed41-4fd6-bac7-71d5b5864ecb",
+  "revision": 0,
+  "last_node_id": 167,
+  "last_link_id": 251,
+  "nodes": [
+    {
+      "id": 69,
+      "type": "MarkdownNote",
+      "pos": [
+        -610.9852939608219,
+        -132.81154111333723
+      ],
+      "size": [
+        390,
+        180
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "VRAM Usage",
+      "properties": {
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "## GPU:RTX4090D 24GB\n\n| Configuration            | VRAM Usage | 1st Generation | 2nd Generation |\n|---------------------|---------------|---------------|-----------------|\n| Fp8_e4m3fn             | 86%                | ≈ 94s               | ≈ 71s                   |\n| With 8steps LoRA    | 86%                | ≈ 55s               | ≈ 34s                  |\n| Distill fp8_e4m3fn   | 86%                | ≈ 69s               | ≈ 36s                  |"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 70,
+      "type": "Note",
+      "pos": [
+        779.0147060391786,
+        997.188458886662
+      ],
+      "size": [
+        310,
+        120
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "Set cfg to 1.0 for a speed boost at the cost of consistency. Samplers like res_multistep work pretty well at cfg 1.0\n\nThe official number of steps is 50 but I think that's too much. Even just 10 steps seems to work."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 74,
+      "type": "MarkdownNote",
+      "pos": [
+        779.0147060391786,
+        747.188458886662
+      ],
+      "size": [
+        310,
+        210
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "KSampler settings",
+      "properties": {},
+      "widgets_values": [
+        "You can test and find the best setting by yourself. The following table is for reference.\n\n| model            | steps | cfg |\n|---------------------|---------------|---------------|\n| fp8_e4m3fn（Qwen team's suggestion）             | 40                | 2.5               \n| fp8_e4m3fn             | 20                | 2.5               |\n| fp8_e4m3fn + 8steps LoRA    | 8               | 1.0               |\n| distill fp8_e4m3fn   | 10               | 1.0              |"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 67,
+      "type": "MarkdownNote",
+      "pos": [
+        -610.9852939608219,
+        97.18845888666264
+      ],
+      "size": [
+        540,
+        630
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Model links",
+      "properties": {
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "[Tutorial](https://docs.comfy.org/tutorials/image/qwen/qwen-image) \n\n## Model links\n\nYou can find all the models on [Huggingface](https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/tree/main) or [Modelscope](https://modelscope.cn/models/Comfy-Org/Qwen-Image_ComfyUI/files)\n\n**Diffusion model**\n\n- [qwen_image_fp8_e4m3fn.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/diffusion_models/qwen_image_fp8_e4m3fn.safetensors)\n\nQwen_image_distill\n\n- [qwen_image_distill_full_fp8_e4m3fn.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/non_official/diffusion_models/qwen_image_distill_full_fp8_e4m3fn.safetensors)\n- [qwen_image_distill_full_bf16.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/non_official/diffusion_models/qwen_image_distill_full_bf16.safetensors)\n\n**LoRA**\n\n- [Qwen-Image-Lightning-8steps-V1.0.safetensors](https://huggingface.co/lightx2v/Qwen-Image-Lightning/resolve/main/Qwen-Image-Lightning-8steps-V1.0.safetensors)\n\n**Text encoder**\n\n- [qwen_2.5_vl_7b_fp8_scaled.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors)\n\n**VAE**\n\n- [qwen_image_vae.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/vae/qwen_image_vae.safetensors)\n\nModel Storage Location\n\n```\n📂 ComfyUI/\n├── 📂 models/\n│   ├── 📂 diffusion_models/\n│   │   ├── qwen_image_fp8_e4m3fn.safetensors\n│   │   └── qwen_image_distill_full_fp8_e4m3fn.safetensors\n│   ├── 📂 loras/\n│   │   └── Qwen-Image-Lightning-8steps-V1.0.safetensors\n│   ├── 📂 vae/\n│   │   └── qwen_image_vae.safetensors\n│   └── 📂 text_encoders/\n│       └── qwen_2.5_vl_7b_fp8_scaled.safetensors\n```\n"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 58,
+      "type": "EmptySD3LatentImage",
+      "pos": [
+        -20.985293960822673,
+        597.188458886662
+      ],
+      "size": [
+        270,
+        106
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "Latent",
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            218
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "EmptySD3LatentImage",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        1984,
+        1280,
+        1
+      ]
+    },
+    {
+      "id": 76,
+      "type": "Note",
+      "pos": [
+        321.3454515646623,
+        767.4848395898313
+      ],
+      "size": [
+        429.92724364007177,
+        113.16878537570301
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "\"A vibrant, warm neon-lit street scene in Hong Kong at the afternoon, with a mix of colorful Chinese and English signs glowing brightly. The atmosphere is lively, cinematic, and rain-washed with reflections on the pavement. The colors are vivid, full of pink, blue, red, and green hues. Crowded buildings with overlapping neon signs. 1980s Hong Kong style. Signs include:\n\"龍鳳冰室\" \"金華燒臘\" \"HAPPY HAIR\" \"鴻運茶餐廳\" \"EASY BAR\" \"永發魚蛋粉\" \"添記粥麵\" \"SUNSHINE MOTEL\" \"美都餐室\" \"富記糖水\" \"太平館\" \"雅芳髮型屋\" \"STAR KTV\" \"銀河娛樂城\" \"百樂門舞廳\" \"BUBBLE CAFE\" \"萬豪麻雀館\" \"CITY LIGHTS BAR\" \"瑞祥香燭莊\" \"文記文具\" \"GOLDEN JADE HOTEL\" \"LOVELY BEAUTY\" \"合興百貨\" \"興旺電器\" And the background is warm yellow street and with all stores' lights on."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 75,
+      "type": "ReservedVRAMSetter",
+      "pos": [
+        352.60393155063326,
+        314.2612679562065
+      ],
+      "size": [
+        281.722265625,
+        82
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "anything",
+          "name": "anything",
+          "type": "*",
+          "link": 159
+        }
+      ],
+      "outputs": [
+        {
+          "label": "output",
+          "name": "output",
+          "type": "*",
+          "links": [
+            131,
+            132
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "Windecay/ComfyUI-ReservedVRAM",
+        "ver": "e446f29759f0ac6a3fd9f712b60dfdd28317c169",
+        "Node name for S&R": "ReservedVRAMSetter"
+      },
+      "widgets_values": [
+        2,
+        "auto"
+      ]
+    },
+    {
+      "id": 39,
+      "type": "VAELoader",
+      "pos": [
+        -50.98529396082266,
+        427.1884588866627
+      ],
+      "size": [
+        330,
+        60
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "VAE",
+          "name": "VAE",
+          "type": "VAE",
+          "slot_index": 0,
+          "links": [
+            76
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "VAELoader",
+        "models": [
+          {
+            "name": "qwen_image_vae.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/vae/qwen_image_vae.safetensors",
+            "directory": "vae"
+          }
+        ],
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "qwen_image_vae.safetensors"
+      ]
+    },
+    {
+      "id": 38,
+      "type": "CLIPLoader",
+      "pos": [
+        -50.98529396082266,
+        277.18845888666283
+      ],
+      "size": [
+        330,
+        110
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "CLIP",
+          "name": "CLIP",
+          "type": "CLIP",
+          "slot_index": 0,
+          "links": [
+            159
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "CLIPLoader",
+        "models": [
+          {
+            "name": "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors",
+            "directory": "text_encoders"
+          }
+        ],
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+        "qwen_image",
+        "default"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "VAEDecode",
+      "pos": [
+        1143.2859405713878,
+        130.96151009657478
+      ],
+      "size": [
+        210,
+        46
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "Latent",
+          "name": "samples",
+          "type": "LATENT",
+          "link": 128
+        },
+        {
+          "label": "VAE",
+          "name": "vae",
+          "type": "VAE",
+          "link": 76
+        }
+      ],
+      "outputs": [
+        {
+          "label": "图像",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            214
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "VAEDecode",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 73,
+      "type": "LoraLoaderModelOnly",
+      "pos": [
+        327.6915938937708,
+        132.71951578456648
+      ],
+      "size": [
+        344.756529196438,
+        82
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "模型",
+          "name": "model",
+          "type": "MODEL",
+          "link": 248
+        }
+      ],
+      "outputs": [
+        {
+          "label": "模型",
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            130
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.49",
+        "Node name for S&R": "LoraLoaderModelOnly",
+        "models": [
+          {
+            "name": "Qwen-Image-Lightning-8steps-V1.0.safetensors",
+            "url": "https://huggingface.co/lightx2v/Qwen-Image-Lightning/resolve/main/Qwen-Image-Lightning-8steps-V1.0.safetensors",
+            "directory": "loras"
+          }
+        ]
+      },
+      "widgets_values": [
+        "qwen\\Qwen-Image-Lightning-8steps-V1.1.safetensors",
+        1
+      ]
+    },
+    {
+      "id": 7,
+      "type": "CLIPTextEncode",
+      "pos": [
+        329.9499041569622,
+        534.0229577102781
+      ],
+      "size": [
+        425.27801513671875,
+        180.6060791015625
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "CLIP",
+          "name": "clip",
+          "type": "CLIP",
+          "link": 132
+        }
+      ],
+      "outputs": [
+        {
+          "label": "条件",
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            217
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "CLIPTextEncode",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        ""
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 3,
+      "type": "KSampler",
+      "pos": [
+        828.6063876486184,
+        248.7240039917026
+      ],
+      "size": [
+        300,
+        474
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "模型",
+          "name": "model",
+          "type": "MODEL",
+          "link": 215
+        },
+        {
+          "label": "正面条件",
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 216
+        },
+        {
+          "label": "负面条件",
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 217
+        },
+        {
+          "label": "Latent",
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 218
+        }
+      ],
+      "outputs": [
+        {
+          "label": "Latent",
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            128
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "KSampler",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        970790778668345,
+        "fixed",
+        10,
+        2.5,
+        "euler",
+        "simple",
+        1
+      ]
+    },
+    {
+      "id": 66,
+      "type": "ModelSamplingAuraFlow",
+      "pos": [
+        807.748356315053,
+        48.12384344007137
+      ],
+      "size": [
+        300,
+        58
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "模型",
+          "name": "model",
+          "type": "MODEL",
+          "link": 130
+        }
+      ],
+      "outputs": [
+        {
+          "label": "模型",
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            215
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "ModelSamplingAuraFlow",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        3.1000000000000005
+      ]
+    },
+    {
+      "id": 37,
+      "type": "UNETLoader",
+      "pos": [
+        -50.98529396082266,
+        137.18845888666277
+      ],
+      "size": [
+        330,
+        90
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "模型",
+          "name": "MODEL",
+          "type": "MODEL",
+          "slot_index": 0,
+          "links": [
+            247
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "UNETLoader",
+        "models": [
+          {
+            "name": "qwen_image_fp8_e4m3fn.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/diffusion_models/qwen_image_fp8_e4m3fn.safetensors",
+            "directory": "diffusion_models"
+          }
+        ],
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "qwen\\qwen_image_fp8_e4m3fn.safetensors",
+        "default"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "CLIPTextEncode",
+      "pos": [
+        319.01470603917704,
+        327.18845888666283
+      ],
+      "size": [
+        422.84503173828125,
+        164.31304931640625
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "CLIP",
+          "name": "clip",
+          "type": "CLIP",
+          "link": 131
+        }
+      ],
+      "outputs": [
+        {
+          "label": "条件",
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            216
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "CLIPTextEncode",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "1 chinese girl in the street"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 71,
+      "type": "Note",
+      "pos": [
+        1189.1361962416513,
+        6.301610171607324
+      ],
+      "size": [
+        300,
+        88
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "Increase the shift if you get too many blury/dark/bad images. Decrease if you want to try increasing detail."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 155,
+      "type": "ModelOnlyLoraLoaderWithBrowser",
+      "pos": [
+        -175.11861911093789,
+        -440.7780222275823
+      ],
+      "size": [
+        439.0650390625,
+        102
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "model",
+          "name": "model",
+          "shape": 7,
+          "type": "MODEL",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "模型",
+          "name": "模型",
+          "type": "MODEL",
+          "links": []
+        },
+        {
+          "label": "当前LoRA绝对路径",
+          "name": "当前LoRA绝对路径",
+          "type": "STRING",
+          "links": [
+            250
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ModelOnlyLoraLoaderWithBrowser"
+      },
+      "widgets_values": [
+        "E:/oldcomfyui/models/loras/qwenimage\\qwen-image 真实风格flymy_realism.safetensors",
+        1
+      ]
+    },
+    {
+      "id": 167,
+      "type": "LoraPathList",
+      "pos": [
+        306.5834880923266,
+        -594.4415015080687
+      ],
+      "size": [
+        370.63046875,
+        294
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "optional_lora_list",
+          "name": "optional_lora_list",
+          "shape": 7,
+          "type": "STRING_LIST",
+          "link": null
+        },
+        {
+          "label": "lora_path_1",
+          "name": "lora_path_1",
+          "type": "STRING",
+          "widget": {
+            "name": "lora_path_1"
+          },
+          "link": 249
+        },
+        {
+          "label": "lora_path_2",
+          "name": "lora_path_2",
+          "type": "STRING",
+          "widget": {
+            "name": "lora_path_2"
+          },
+          "link": 250
+        }
+      ],
+      "outputs": [
+        {
+          "label": "lora_paths_list",
+          "name": "lora_paths_list",
+          "type": "STRING_LIST",
+          "links": null
+        },
+        {
+          "label": "lora_paths_strings",
+          "name": "lora_paths_strings",
+          "shape": 6,
+          "type": "STRING",
+          "links": [
+            251
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraPathList"
+      },
+      "widgets_values": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 151,
+      "type": "ModelOnlyLoraLoaderWithBrowser",
+      "pos": [
+        -171.0738589829473,
+        -605.6162543823174
+      ],
+      "size": [
+        439.0650390625,
+        102
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "model",
+          "name": "model",
+          "shape": 7,
+          "type": "MODEL",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "模型",
+          "name": "模型",
+          "type": "MODEL",
+          "links": null
+        },
+        {
+          "label": "当前LoRA绝对路径",
+          "name": "当前LoRA绝对路径",
+          "type": "STRING",
+          "links": [
+            249
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ModelOnlyLoraLoaderWithBrowser"
+      },
+      "widgets_values": [
+        "E:/makelora/output\\QweneditAtoP\\AWPortrait-QW_1.0 - 副本.safetensors",
+        1
+      ]
+    },
+    {
+      "id": 85,
+      "type": "PreviewImage",
+      "pos": [
+        730.7791467306316,
+        -577.4360998362441
+      ],
+      "size": [
+        542.1566428277247,
+        289.0198591606127
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "图像",
+          "name": "images",
+          "type": "IMAGE",
+          "link": 214
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.65",
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 166,
+      "type": "ModelOnlyLoraLoader",
+      "pos": [
+        74.050143295454,
+        -229.43956709582397
+      ],
+      "size": [
+        458.526953125,
+        82
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "model",
+          "name": "model",
+          "type": "MODEL",
+          "link": 247
+        },
+        {
+          "label": "lora_path",
+          "name": "lora_path",
+          "type": "STRING",
+          "widget": {
+            "name": "lora_path"
+          },
+          "link": 251
+        }
+      ],
+      "outputs": [
+        {
+          "label": "MODEL",
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            248
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ModelOnlyLoraLoader"
+      },
+      "widgets_values": [
+        "",
+        1
+      ]
+    }
+  ],
+  "links": [
+    [
+      76,
+      39,
+      0,
+      8,
+      1,
+      "VAE"
+    ],
+    [
+      128,
+      3,
+      0,
+      8,
+      0,
+      "LATENT"
+    ],
+    [
+      130,
+      73,
+      0,
+      66,
+      0,
+      "MODEL"
+    ],
+    [
+      131,
+      75,
+      0,
+      6,
+      0,
+      "CLIP"
+    ],
+    [
+      132,
+      75,
+      0,
+      7,
+      0,
+      "CLIP"
+    ],
+    [
+      159,
+      38,
+      0,
+      75,
+      0,
+      "*"
+    ],
+    [
+      214,
+      8,
+      0,
+      85,
+      0,
+      "IMAGE"
+    ],
+    [
+      215,
+      66,
+      0,
+      3,
+      0,
+      "MODEL"
+    ],
+    [
+      216,
+      6,
+      0,
+      3,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      217,
+      7,
+      0,
+      3,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      218,
+      58,
+      0,
+      3,
+      3,
+      "LATENT"
+    ],
+    [
+      247,
+      37,
+      0,
+      166,
+      0,
+      "MODEL"
+    ],
+    [
+      248,
+      166,
+      0,
+      73,
+      0,
+      "MODEL"
+    ],
+    [
+      249,
+      151,
+      1,
+      167,
+      1,
+      "STRING"
+    ],
+    [
+      250,
+      155,
+      1,
+      167,
+      2,
+      "STRING"
+    ],
+    [
+      251,
+      167,
+      1,
+      166,
+      1,
+      "STRING"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "Step1 - Load models",
+      "bounding": [
+        -60.98529396082266,
+        67.18845888666266,
+        350,
+        433.6000061035156
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 2,
+      "title": "Step2 - Image size",
+      "bounding": [
+        -60.98529396082266,
+        517.1884588866624,
+        350,
+        210
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 3,
+      "title": "Step3 - Prompt",
+      "bounding": [
+        309.01470603917704,
+        247.18845888666286,
+        450,
+        470
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 4,
+      "title": "Lightx2v 8steps LoRA",
+      "bounding": [
+        309.01470603917704,
+        67.18845888666266,
+        450,
+        170
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 5,
+      "title": "创建一个lora读取的列表",
+      "bounding": [
+        -185.11861911093789,
+        -679.2162543823174,
+        1478.9896067870793,
+        559.5463842278942
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.604613668332242,
+      "offset": [
+        1118.8492311354246,
+        627.475607406614
+      ]
+    },
+    "frontendVersion": "1.28.7",
+    "ue_links": [],
+    "links_added_by_ue": [],
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
