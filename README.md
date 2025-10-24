@@ -1,7 +1,8 @@
 # 神都猫扩展LoRA加载及对比器
 
 一个功能增强的ComfyUI LoRA加载工具集，支持多路径扫描、绝对路径输入，新增**批量LoRA对比**与**多提示词输入**能力，让LoRA管理更灵活。
-
+视频操作说明：
+https://www.bilibili.com/video/BV1NEsWzREU5/?vd_source=ca144c51975a3fad0691206554673079
 
 ## 核心功能
 
