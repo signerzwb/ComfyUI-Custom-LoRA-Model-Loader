@@ -1,3 +1,3 @@
-# 可添加更多常用路径 一行一个文件夹，注意是反斜杠, 
+# 可添加更多常用路径 一行一个文件夹，注意是反斜杠, 注意，支持子文件夹，就是里面多级子文件夹中的lora也会列出
 E:/makelora/output
 E:/oldcomfyui/models/loras/qwenimage
