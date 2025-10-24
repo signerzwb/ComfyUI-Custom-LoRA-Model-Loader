@@ -1,0 +1,24 @@
+{
+    "name": "神都猫扩展LoRA加载器",
+    "description": "扩展LoRA加载路径，无需局限于本地loras文件夹，支持自定义多个LoRA文件夹扫描或直接读取本地绝对路径，仅对模型（Model）应用LoRA效果，不影响CLIP模型，同时支持-10.0~10.0的正负强度调节，自动过滤非支持格式（.safetensors/.pt/.bin/.ckpt）",
+    "author": "神都猫 (shendumao)",
+    "version": "1.0.0",
+    "repo": "https://github.com/signerzwb/ComfyUI-Custom-LoRA-Model-Loader",
+    "install_dir": "ComfyUI-Custom-LoRA-Model-Loader",
+    "node_classes": [
+        "ModelOnlyLoraLoaderWithBrowser",
+        "ModelOnlyLoraLoader"
+    ],
+    "requirements": [],
+    "tags": [
+        "lora",
+        "loader",
+        "custom path",
+        "多路径扫描",
+        "绝对路径加载",
+        "神都猫",
+        "ComfyUI扩展"
+    ],
+    "category": "loaders/custom",
+    "icon": "🐱"
+}
